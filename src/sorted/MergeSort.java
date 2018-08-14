@@ -7,6 +7,7 @@ import static sorted.BubleSort.print;
  * desc:
  */
 public class MergeSort {
+
   public static void main(String[] args) {
     int[] nums = {5, 4, 3, 2, 1};
     sort(nums, 0 , nums.length - 1);
