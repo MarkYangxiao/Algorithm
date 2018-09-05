@@ -1,0 +1,7 @@
+JAVA IO可分成以下几类：
+1.磁盘操作： File
+2.字节操作： InputStream和OutputStream
+3.字符操作： Writer 和 Reader
+4.对象操作： Serializable
+5.网络操作： Socket
+6.新的输入/输出： NIO

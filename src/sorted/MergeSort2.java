@@ -27,7 +27,30 @@ public class MergeSort2 {
   }
 
   public void merge(int[] a, int low, int mid, int hight) {
+
     for (int k = low; k <= hight; k++) {
+      aux[k] = a[k];
+    }
+
+    int i = low;
+    int j = mid + 1;
+    for (int k = low; k <= hight; k++) {
+      if (i > mid) {
+        a[k] = aux[j++];
+      } else if (j > hight) {
+        a[k] = aux[i++];
+      } else {
+        if (aux[i] <= aux[j]) {
+          a[k] = aux[i++];
+        } else {
+          a[k] = aux[j++];
+        }
+      }
+    }
+
+
+
+    /*for (int k = low; k <= hight; k++) {
       aux[k] = a[k];
     }
     int i = low;
@@ -45,11 +68,11 @@ public class MergeSort2 {
         else
           a[k] = aux[j++];
       }
-    }
+    }*/
   }
 
   public static void main(String[] args) {
-    /*int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1};
 
     MergeSort2 mergeSort2 = new MergeSort2();
 
@@ -57,7 +80,7 @@ public class MergeSort2 {
 
     for (int ele : a) {
       System.out.print(ele + " ");
-    }*/
+    }
 
    /* Map<Integer, Integer> map = new HashMap<>();
     map.put(1,2);

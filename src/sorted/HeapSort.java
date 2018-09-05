@@ -8,7 +8,7 @@ import static sorted.BubleSort.swap;
  */
 public class HeapSort {
   public static void main(String[] args) {
-    int[] nums = {1,2,3,4,5};
+    int[] nums = {5,3,2,1,5,9 };
     sort(nums);
     print(nums);
   }
