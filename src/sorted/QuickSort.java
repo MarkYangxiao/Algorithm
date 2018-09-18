@@ -9,7 +9,7 @@ import static sorted.BubleSort.print;
  */
 public class  QuickSort {
   public static void main(String[] args) {
-    int[] nums = {5, 4, 3, 2, 1};
+    int[] nums = {5, 4, 3, 2, 1, 4};
     sort(nums, 0, nums.length - 1);
     print(nums);
   }
@@ -24,11 +24,11 @@ public class  QuickSort {
   public static int getMiddle(int[] nums, int low, int high) {
     int tmp = nums[low]; //选定一个key ，左边比key 小 右边比key大
     while (low < high) {
-      while (low < high && tmp < nums[high]) {
+      while (low < high && tmp <= nums[high]) {
         high--;
       }
       nums[low] = nums[high];
-      while (low < high && tmp > nums[low]) {
+      while (low < high && tmp >= nums[low]) {
         low++;
       }
       nums[high] = nums[low];
