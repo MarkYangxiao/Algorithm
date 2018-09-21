@@ -8,15 +8,25 @@ import java.util.Queue;
  * desc:
  */
 public class RLEIterator {
-  Queue<Integer> queue;
+  static Queue<Integer> queue;
+
+  public static void main(String[] args) {
+    int[] A = {3,8,0,9,2,5};
+    RLEIterator rleIterator = new RLEIterator(A);
+    System.out.print(next(2));
+    System.out.print(next(1));
+    System.out.print(next(1));
+    System.out.print(next(2));
+
+  }
   public RLEIterator(int[] A) {
     queue = transfer(A);
-    System.out.print(queue.size());
+
   }
 
-  public int next(int n) {
+  public static int next(int n) {
     Integer ans = null;
-    while (!queue.isEmpty() && queue.size() - n > 0) {
+    while (!queue.isEmpty() && queue.size() - n >= 0 && n > 0) {
       n--;
       ans = queue.poll();
     }
@@ -25,14 +35,14 @@ public class RLEIterator {
     }
     return ans;
   }
-  private Queue<Integer> transfer(int[] A) {
+  private static Queue<Integer> transfer(int[] A) {
     if (A == null || A.length == 0 || A.length % 2 == 1) {
       return new LinkedList();
     }
     Queue<Integer> queue = new LinkedList<Integer>();
     for (int i = 0; i < A.length - 1; i += 2) {
       for (int j = 0; j < A[i]; j++) {
-        queue.offer(A[i]);
+        queue.offer(A[i + 1]);
       }
     }
     return queue;
