@@ -9,7 +9,7 @@ import java.util.Queue;
  * https://leetcode.com/problems/flood-fill/description/
  */
 public class FloodFill {
-  public int[][] floodFill_dfs(int[][] image, int sr, int sc, int newColor) {
+  public int[][] floodFill_bfs(int[][] image, int sr, int sc, int newColor) {
     //bfs
     Queue<int[]> queue = new LinkedList<>();
     int orgin = image[sr][sc];
@@ -36,7 +36,7 @@ public class FloodFill {
     return image;
   }
 
-  public int[][] floodFill_bfs(int[][] image, int sr, int sc, int newColor) {
+  public int[][] floodFill_dfs(int[][] image, int sr, int sc, int newColor) {
     dfs(image, image[sr][sc], sr, sc, newColor, image.length, image[0].length, new boolean[image.length][image[0].length]);
     return image;
   }
