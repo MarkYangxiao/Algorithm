@@ -1,5 +1,7 @@
 package sorted;
 
+import java.util.Arrays;
+
 import static sorted.BubleSort.print;
 import static sorted.BubleSort.swap;
 /**
